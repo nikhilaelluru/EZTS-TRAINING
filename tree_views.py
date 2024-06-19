@@ -1,3 +1,4 @@
+#Making use of queue data structur to print bfs and we use stack to print dfs.
 class Node:
     def __init__(self,data):
         self.data=data
@@ -60,37 +61,27 @@ def bottom_views(root):
 
 
 def left_Side_views(root):
-    temp=node_data(root,0)
-    q=[temp]
+    q=[root]
     q.append(None)
-    key_dict={}
-
+    print(root.data,end=" ")
     while len(q)!=0:
         curr=q.pop(0)
         if curr==None:
             if len(q)==0:
                 break
             else:
+                print(q[0].data,end=" ")
                 q.append(None)
         else:
-            if curr.hkey not in key_dict:
-                key_dict[curr.hkey]=curr.node.data
-            if curr.node.left!=None:
-                temp=node_data(curr.node.left,curr.hkey+1)
-                q.append(temp)
-            if curr.node.right!=None:
-                temp=node_data(curr.node.right,curr.hkey+1)
-                q.append(temp)
-    for i in sorted(key_dict):
-        print(key_dict[i],end=" ")
+            if curr.left!=None:
+                q.append(curr.left)
+            if curr.right!=None:
+                q.append(curr.right)
     
 
 def Right_Side_views(root):
-    temp=node_data(root,0)
-    q=[temp]
+    q=[root]
     q.append(None)
-    key_dict={}
-
     while len(q)!=0:
         curr=q.pop(0)
         if curr==None:
@@ -99,15 +90,12 @@ def Right_Side_views(root):
             else:
                 q.append(None)
         else:
-            key_dict[curr.hkey]=curr.node.data
-            if curr.node.left!=None:
-                temp=node_data(curr.node.left,curr.hkey+1)
-                q.append(temp)
-            if curr.node.right!=None:
-                temp=node_data(curr.node.right,curr.hkey+1)
-                q.append(temp)
-    for i in sorted(key_dict):
-        print(key_dict[i],end=" ")
+            if q[0]==None:
+                print(curr.data,end=" ")
+            if curr.left!=None:
+                q.append(curr.left)
+            if curr.right!=None:
+                q.append(curr.right)
   
 if __name__=="__main__":
     root=Node(1)
