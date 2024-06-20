@@ -1,4 +1,7 @@
-#Making use of queue data structur to print bfs and we use stack to print dfs.
+#TREE VIEWS
+
+#Making use of queue data structure to print bfs and we use stack to print dfs.
+
 class Node:
     def __init__(self,data):
         self.data=data
@@ -125,3 +128,5 @@ if __name__=="__main__":
     left_Side_views(root)
     print("\nRIGHT SIDE VIEW")
     Right_Side_views(root)
+ 
+ 
