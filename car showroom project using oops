@@ -1,0 +1,80 @@
+# CAR-SHOWROOM PROJECT USING OOPS
+  
+# Create a class carshowroom in which
+# -  create a function named car company which will allow user to select a car company out of the 
+#    displayed companies. If the user enters any random car company he should be asked to re-enter.
+
+# -  According to the car company selected the user should be re-directed to selecting the models 
+#    of that company out of the given list. If anything other than list is given ask to re-enter.
+
+# -  After selecting the model, the user should be redirected to selecting the variant(petrol/diesel).
+ 
+# -  According to the car company model and variant a price should be calculated to which sgst and 
+#    cgst are added to make up the total price.
+
+# NOTE: cgst and sgst are common for all the cars. 
+
+class car:
+    def __init__(self):
+        self.cgst=5555
+        self.sgst=5555
+        self.insurance=5555
+    def company(self):
+        while True:
+            print("TOYOTA, MERCEDES")
+            self.n=input("ENTER CAR COMPANY: ")
+            if self.n=="TOYOTA":
+                print("WELCOME TO TOYOTA")
+                self.model()
+                break
+            elif self.n=="MERCEDES":
+                print("WELCOME TO MERCEDES")
+                self.model()
+                break
+            else:
+                print("INVALID COMPANY")
+                
+        
+    def model(self):
+        if self.n=="TOYOTA":
+            while True:
+                print("SELECT FROM FORTUNER AND LC: ")
+                self.choice=input("ENTER CAR MODEL: ")
+                if self.choice=="FORTUNER":
+                    self.price(self.choice)
+                    break
+                elif self.choice=="LC":
+                    self.price(self.choice)
+                    break
+                else:
+                    print("INVALID COMPANY")
+            
+        elif self.n=="MERCEDES":
+            while True:
+                print("SELECT FROM AMG AND GW: ")
+                self.choice=input("ENTER CAR MODEL: ")
+                if self.choice=="AMG":
+                    self.price(self.choice)
+                    break
+                elif self.choice=="GW":
+                    self.price(self.choice)
+                    break
+                else:
+                    print("INVALID COMPANY")
+                    
+    def price(self,choice):
+        if choice=="FORTUNER":
+            self.p==450000
+        elif choice=="LC":
+            self.p=1000000
+        elif choice=="AMG":
+            self.p=2440000
+        elif choice=="GW":
+            self.p=830000
+        tot_p=self.p + self.sgst + self.cgst + self.insurance
+        print(tot_p)
+        
+c=car()
+c.company()
+            
+            
